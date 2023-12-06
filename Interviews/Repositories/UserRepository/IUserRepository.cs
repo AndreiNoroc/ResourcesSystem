@@ -7,5 +7,7 @@ namespace Interviews.Repositories.UserRepository
     {
         public Task<ActionResult<string>> RegisterUserRepo(User request);
         public Task<ActionResult<User>> LoginUserRepo(UserDto request);
+        public Task<ActionResult<List<string>>> GetAllUserRepo();
+        public Task<bool> DeleteUserByUsernameAsync(string username);
     }
 }

@@ -23,25 +23,25 @@ namespace Interviews.Controllers.ResourcesController
             return await _resourcesService.GetAllResourcesService();
         }
 
-        [HttpGet("{rname}"), Authorize(Roles = "Admin")]
+        [HttpGet("{rname}"), Authorize]
         public async Task<ActionResult<ResourceDTO>> GetByName([FromRoute] string rname)
         {
             return await _resourcesService.GetByNameService(rname);
         }
 
-        [HttpPost, Authorize(Roles = "Admin")]
+        [HttpPost, Authorize]
         public async Task<ActionResult<string>> InsertResource([FromBody] ResourceDTO resource)
         {
             return await _resourcesService.InsertResourceService(resource);
         }
 
-        [HttpPut("{rname}"), Authorize(Roles = "Admin")]
+        [HttpPut("{rname}"), Authorize]
         public async Task<ActionResult<string>> UpdateResource([FromRoute] string rname, [FromBody] ResourceDTO resource)
         {
             return await _resourcesService.UpdateResourceService(rname, resource);
         }
 
-        [HttpDelete, Authorize(Roles = "Admin")]
+        [HttpDelete, Authorize]
         public async Task<ActionResult<string>> DeleteResources()
         {
             return await _resourcesService.DeleteResourcesService();

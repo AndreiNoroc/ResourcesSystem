@@ -16,7 +16,7 @@ namespace Interviews.Controllers.UserController
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<string>> Register(UserDto request)
+        public async Task<ActionResult<string>> Register(UserDTORegister request)
         {
             return await _userService.RegisterUser(request);
         }

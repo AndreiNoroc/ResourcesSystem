@@ -145,6 +145,9 @@ public partial class MobylabAppContext : DbContext
             entity.Property(e => e.Username)
                 .HasMaxLength(15)
                 .HasColumnName("username");
+            entity.Property(e => e.Role)
+                .HasMaxLength(15)
+                .HasColumnName("role");
         });
 
         OnModelCreatingPartial(modelBuilder);

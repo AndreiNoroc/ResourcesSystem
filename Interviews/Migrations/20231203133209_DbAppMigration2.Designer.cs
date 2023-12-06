@@ -2,6 +2,7 @@
 using Interviews.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Interviews.Migrations
 {
     [DbContext(typeof(MobylabAppContext))]
-    partial class MobylabAppContextModelSnapshot : ModelSnapshot
+    [Migration("20231203133209_DbAppMigration2")]
+    partial class DbAppMigration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,12 +177,6 @@ namespace Interviews.Migrations
                         .IsRequired()
                         .HasColumnType("bytea")
                         .HasColumnName("passwordsalt");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("character varying(15)")
-                        .HasColumnName("role");
 
                     b.Property<string>("Username")
                         .IsRequired()

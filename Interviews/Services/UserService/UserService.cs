@@ -19,17 +19,24 @@ namespace Interviews.Services.UserService
             _configuration = configuration;
         }
 
-        public async Task<ActionResult<string>> RegisterUser(UserDto request)
+        public async Task<ActionResult<string>> RegisterUser(UserDTORegister request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
             User user = new User();
 
-            user.Username = request.Username;
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            if (request.Role.Equals("Admin") || request.Role.Equals("User"))
+            {
+                user.Username = request.Username;
+                user.Role = request.Role;
+                user.PasswordHash = passwordHash;
+                user.PasswordSalt = passwordSalt;
 
-            return await _userRepository.RegisterUserRepo(user);
+                return await _userRepository.RegisterUserRepo(user);
+            } else
+            {
+                return "Wrong role";
+            }
         }
 
         public async Task<ActionResult<string>> LoginUser(UserDto request)
@@ -57,7 +64,7 @@ namespace Interviews.Services.UserService
             List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role, "Admin")
+                new Claim(ClaimTypes.Role, user.Role)
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(

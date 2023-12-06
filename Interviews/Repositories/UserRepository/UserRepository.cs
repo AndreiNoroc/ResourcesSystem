@@ -1,5 +1,6 @@
 ﻿using Interviews.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Interviews.Repositories.UserRepository
 {
@@ -25,6 +26,33 @@ namespace Interviews.Repositories.UserRepository
             IEnumerable<User> entries = _dbContext.Users.Where(user => user.Username == request.Username).ToList();
             User result = entries.First();
             return result;
+        }
+
+        public async Task<ActionResult<List<string>>> GetAllUserRepo()
+        {
+            List<User> rawUsers = _dbContext.Users.ToList();
+            List<string> usernames = new List<string>();
+
+            foreach (User user in rawUsers)
+            {
+                usernames.Add(user.Username);
+            }
+
+            return usernames;
+        }
+
+        public async Task<bool> DeleteUserByUsernameAsync(string username)
+        {
+            var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Username == username);
+
+            if (user != null)
+            {
+                _dbContext.Users.Remove(user);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
         }
     }
 }

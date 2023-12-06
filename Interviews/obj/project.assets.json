@@ -3215,19 +3215,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elena\\.nuget\\packages\\": {}
+    "C:\\Users\\Tibi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elena\\Desktop\\ANDREI\\Facultate\\PWEB\\Interviews\\Interviews\\Interviews.csproj",
+      "projectUniqueName": "C:\\Users\\Tibi\\Desktop\\ResourcesSystem\\Interviews\\Interviews.csproj",
       "projectName": "Interviews",
-      "projectPath": "C:\\Users\\Elena\\Desktop\\ANDREI\\Facultate\\PWEB\\Interviews\\Interviews\\Interviews.csproj",
-      "packagesPath": "C:\\Users\\Elena\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elena\\Desktop\\ANDREI\\Facultate\\PWEB\\Interviews\\Interviews\\obj\\",
+      "projectPath": "C:\\Users\\Tibi\\Desktop\\ResourcesSystem\\Interviews\\Interviews.csproj",
+      "packagesPath": "C:\\Users\\Tibi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tibi\\Desktop\\ResourcesSystem\\Interviews\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Elena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tibi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
