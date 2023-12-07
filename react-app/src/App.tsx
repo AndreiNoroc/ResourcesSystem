@@ -9,6 +9,7 @@ import SignIn from './pages/signin';
 import GetByName from './pages/getbyname';
 import AddResource from './pages/addresource';
 import UpdateResource from './pages/updateresource';
+import Admin from './pages/admin';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/addresource' Component={AddResource} />
         <Route path='/updateresource' Component={UpdateResource} />
         <Route path='/signin' Component={SignIn} />
+        <Route path='/admin' Component={Admin} />
       </Routes>
       <ToastContainer />
     </Router>

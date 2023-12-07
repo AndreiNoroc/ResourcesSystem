@@ -106,7 +106,7 @@ const UpdateResource = () => {
           <label className="label">Category</label>
           <input onChange={handleCategory} className="input"
             value={category} type="text" />
-
+          <br></br>
           <label className="label">Description</label>
           <input onChange={handleDescription} className="input"
             value={description} type="text" />

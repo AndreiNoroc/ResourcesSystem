@@ -55,7 +55,6 @@ const SignUp = () => {
           <label className="label">Username</label>
           <input onChange={handleUsername} className="input"
             value={uname} type="text" />
-  
           <label className="label">Password</label>
           <input onChange={handlePassword} className="input"
             value={pass} type="password" />

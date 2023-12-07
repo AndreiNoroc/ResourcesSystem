@@ -44,6 +44,8 @@ namespace Interviews.Repositories.UserRepository
         public async Task<bool> DeleteUserByUsernameAsync(string username)
         {
             var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Username == username);
+   
+            Console.WriteLine(username);
 
             if (user != null)
             {

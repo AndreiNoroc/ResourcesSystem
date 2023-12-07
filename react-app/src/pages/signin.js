@@ -3,8 +3,10 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 
 const SignIn = () => {
+  const cookies = new Cookies();
   const [uname, setName] = useState('');
   const [pass, setPassword] = useState('');
   const navigate = useNavigate();
@@ -31,6 +33,7 @@ const SignIn = () => {
 
       if (res.status === 200) {
         toast.success("Successfully logged in! Your token is \n" + res.data);
+        cookies.set('token',  res.data, { path: '/', expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7) });
         navigate('/');
       }
 

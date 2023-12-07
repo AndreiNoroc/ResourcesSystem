@@ -102,7 +102,7 @@ const AddResource = () => {
           <label className="label">Description</label>
           <input onChange={handleDescription} className="input"
             value={description} type="text" />
-
+          <br></br>
           <label className="label">Token</label>
           <input onChange={handleToken} className="input" value={token} type="text" />
         </form>
